@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardview_margin">5dp</dimen>
+    <dimen name="breed_image_dimen">100dp</dimen>
+    <dimen name="big_pic_dimen">500dp</dimen>
+</resources>

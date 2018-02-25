@@ -6,4 +6,10 @@
     <string name="string_contained">Password cannot contain Username</string>
     <string name="password_empty">Please Enter Password</string>
     <string name="username_empty">Please Enter Username</string>
+    <string name="breed_question">What kind of dog would you like to see,?</string>
+    <string name="terrier">Terrier</string>
+    <string name="spaniel">Spaniel</string>
+    <string name="retriever">Retriever</string>
+    <string name="poodle">Poodle</string>
+    <string name="logout">Logout</string>
 </resources>
