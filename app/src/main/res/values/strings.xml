@@ -2,5 +2,8 @@
     <string name="app_name">AndroidPractical</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="login">Login</string>
+    <string name="login">Submit</string>
+    <string name="string_contained">Password cannot contain Username</string>
+    <string name="password_empty">Please Enter Password</string>
+    <string name="username_empty">Please Enter Username</string>
 </resources>
