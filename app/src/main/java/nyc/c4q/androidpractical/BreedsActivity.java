@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -33,18 +34,19 @@ import java.net.URL;
 public class BreedsActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String SHARED_PREFS_KEY = "loginCredentials";
-    SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferences;
 
 
     private ImageView terrier;
     private ImageView poodle;
     private ImageView retriever;
     private ImageView spaniel;
+    private TextView welcome;
 
-    CardView terrierCard;
-    CardView spanielCard;
-    CardView retrieverCard;
-    CardView poodleCard;
+    private CardView terrierCard;
+    private CardView spanielCard;
+    private CardView retrieverCard;
+    private CardView poodleCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,9 @@ public class BreedsActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_breeds);
 
         sharedPreferences = getApplicationContext().getSharedPreferences(SHARED_PREFS_KEY, MODE_PRIVATE);
+
+        welcome = (TextView) findViewById(R.id.welcome);
+        welcome.setText(getWelcomeMessage());
 
         terrier = (ImageView) findViewById(R.id.terrier_image);
         poodle = (ImageView) findViewById(R.id.poodle_image);
@@ -73,6 +78,15 @@ public class BreedsActivity extends AppCompatActivity implements View.OnClickLis
         GetImages getImages = new GetImages();
         getImages.execute();
 
+    }
+
+    public String getWelcomeMessage(){
+        String username = sharedPreferences.getString("username",null);
+        StringBuilder welcome = new StringBuilder();
+        welcome.append(getResources().getString(R.string.breed_question));
+        welcome.append(username);
+        welcome.append("?");
+        return welcome.toString();
     }
 
     public String getRequestString(String breed) {
